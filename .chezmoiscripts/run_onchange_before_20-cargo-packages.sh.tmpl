@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# {{- if .server -}}
+
+# {{ template "scripts-library" }}
+
+# The following line is for ShellCheck to correctly identify the above include
+true || source ../.chezmoitemplates/scripts-library
+
+set -eufo pipefail
+
+log_task "Installing cargo packages"
+
+CARGO=$(command -v cargo)
+if [[ -z "$CARGO" ]]; then
+  CARGO="$HOME/.cargo/bin/cargo"
+fi
+
+# {{ range .packages.cargo -}}
+# shellcheck disable=SC1083
+"$CARGO" install {{ . | quote }}
+# {{ end -}}
+
+# {{- end -}}

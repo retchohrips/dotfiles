@@ -1,4 +1,12 @@
 packages:
+  apt:
+    - "bat"
+    - "build-essential" # for rust to build
+    - "cmake" # for rust to build
+    - "fzf"
+    - "neovim"
+    - "ripgrep"
+    - "ugrep"
   brew:
     - "atuin"
     - "bat"
@@ -24,6 +32,12 @@ packages:
     - "ugrep"
     - "yq"
     - "zoxide"
+  cargo:
+    - "eza"
+    - "fd-find"
+    - "git-delta"
+    - "starship"
+    - "tealdeer"
   flatpak:
     - "org.bleachbit.BleachBit"
     - "org.blender.Blender"
@@ -34,7 +48,6 @@ packages:
     - "org.telegram.desktop"
     - "io.github.zen_browser.zen"
   pip:
-    - "basedpyright"
     - "uv"
   termux:
     - "atuin"

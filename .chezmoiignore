@@ -7,6 +7,8 @@ LICENSE
 {{ if eq .chezmoi.os "android" }}
 .config/fish/custom_functions.d/note.fish
 .config/no-show-user-motd
+.local/bin
+Pictures
 {{ end }}
 
 {{ if ne .chezmoi.os "android" }}
@@ -17,4 +19,13 @@ LICENSE
 .config/kscreenlockerrc
 .config/kglobalshortcutsrc
 .config/kxkbrc
+{{ end }}
+
+{{ if not .blue }}
+.config/autostart
+{{ end }}
+
+{{ if .server }}
+.config/{gh,lazygit,wezterm,zed}
+Pictures
 {{ end }}
