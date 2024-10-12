@@ -44,5 +44,9 @@ gsettings_ensure org.gnome.desktop.interface clock-show-weekday "true"
 
 gsettings_ensure org.gnome.desktop.datetime automatic-timezone "true"
 
+dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding "'<Control><Alt>t'"
+dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/command "'flatpak run org.wezfurlong.wezterm'"
+dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/name "'Terminal'"
+
 dconf write /org/gnome/shell/favorite-apps "['brave-browser.desktop', 'org.gnome.Nautilus.desktop', 'md.obsidian.Obsidian.desktop']"
 # {{- end -}}
