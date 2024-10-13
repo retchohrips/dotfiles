@@ -1,9 +1,7 @@
 if command -qs eza
     alias ls 'eza --icons --sort=type'
-    alias l. 'eza --icons --sort=type -d .*'
-    alias l 'eza -l --icons --git --sort=type --header --no-time --total-size --smart-group'
-    alias ll 'eza -l --icons --git --sort=type --header --no-time --total-size --smart-group'
-    alias la 'eza -lag --icons --git --sort=type --header --no-time --total-size'
+    alias l 'eza -l --icons --git --sort=type --header --no-time --total-size --smart-group --octal-permissions'
+    alias la 'eza -lag --icons --git --sort=type --header --no-time --total-size --smart-group --octal-permissions'
 end
 
 if command -qs batcat

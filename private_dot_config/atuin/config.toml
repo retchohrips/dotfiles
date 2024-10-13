@@ -126,7 +126,7 @@ show_tabs = false
 
 ## Defaults to true. If enabled, upon hitting enter Atuin will immediately execute the command. Press tab to return to the shell and edit.
 # This applies for new installs. Old installs will keep the old behaviour unless configured otherwise.
-enter_accept = true
+# enter_accept = true
 
 ## Defaults to "emacs".  This specifies the keymap on the startup of `atuin
 ## search`.  If this is set to "auto", the startup keymap mode in the Atuin
@@ -160,8 +160,8 @@ common_subcommands = [
   #   "dnf",
   "docker",
   "git",
-  #   "go",
-  #   "ip",
+  "go",
+  "ip",
   #   "kubectl",
   #   "nix",
   #   "nmcli",
@@ -193,4 +193,4 @@ common_prefix = ["sudo"]
 # Enable sync v2 by default
 # This ensures that sync v2 is enabled for new installs only
 # In a later release it will become the default across the board
-records = true
+# records = true
