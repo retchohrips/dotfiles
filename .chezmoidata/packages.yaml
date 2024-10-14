@@ -12,7 +12,6 @@ packages:
     - "bat"
     - "bat-extras"
     - "binutils"
-    - "direnv"
     - "eza"
     - "fd"
     - "fzf"
