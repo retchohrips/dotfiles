@@ -1,46 +1,55 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
 format = """
-$username\
-$hostname\
-$directory\
-$git_branch\
-$git_state\
-$git_status\
+[╭](fg:bright-black)$username$hostname\
+$container$directory\
+$git_branch$git_status\
+$golang$nodejs$python\
 $cmd_duration\
 $line_break\
-$python\
-$character"""
+[╰](fg:bright-black)$character"""
+
+[username]
+format = "[─](fg:bright-black)[](fg:white)[ ](fg:black bg:white)[](fg:white bg:bright-black)[ $user](bg:bright-black)[](fg:bright-black)"
+
+[hostname]
+format = "[─](fg:bright-black)[](fg:green)[ ](fg:black bg:green)[](fg:green bg:bright-black)[ $hostname](bg:bright-black)[](fg:bright-black)"
+
+[container]
+symbol = " "
+format = "[─](fg:bright-black)[](fg:red)[$symbol](fg:black bg:red)[](fg:red bg:bright-black)[ $name](bg:bright-black)[](fg:bright-black)"
 
 [directory]
-style = "blue"
+format = "[─](fg:bright-black)[](fg:blue)[ ](fg:black bg:blue)[](fg:blue bg:bright-black)[ $path](bg:bright-black)[](fg:bright-black)"
+repo_root_style = "fg:bright-black" # Not actually used, but needed to get repo_root_format
+repo_root_format = "[─](fg:bright-black)[](fg:blue)[ ](fg:black bg:blue)[](fg:blue bg:bright-black)[ $repo_root$path](bg:bright-black)[](fg:bright-black)"
+truncation_length = 5 # Number of folders that the directory should truncate to
+truncate_to_repo = true
+truncation_symbol = "…/"
+
+[git_branch]
+symbol =" "
+format = "[─](fg:bright-black)[](fg:cyan)[$symbol](fg:black bg:cyan)[](fg:cyan bg:bright-black)[ $branch(:$remote-branch)](bg:bright-black)[](fg:bright-black)"
+ignore_branches = ["main", "master"]
+
+[git_status]
+format = "([─](fg:bright-black)[](fg:red)[$all_status$ahead_behind](fg:black bg:red)[](fg:red))"
+
+[golang]
+format = "[─](fg:bright-black)[](fg:cyan)[$symbol](fg:black bg:cyan)[](fg:cyan bg:bright-black)[ $version](bg:bright-black)[](fg:bright-black)"
+symbol = "󰟓 "
+
+[nodejs]
+format = "[─](fg:bright-black)[](fg:green)[$symbol](fg:black bg:green)[](fg:green bg:bright-black)[ $version](bg:bright-black)[](fg:bright-black)"
+
+[python]
+format = "[─](fg:bright-black)[](fg:yellow)[$symbol](fg:black bg:yellow)[](fg:yellow bg:bright-black)[ $version( via $virtualenv)](bg:bright-black)[](fg:bright-black)"
+symbol = " "
+
+[cmd_duration]
+format = "[─](fg:bright-black)[](fg:yellow)[󱎫 ](fg:black bg:yellow)[](fg:yellow bg:bright-black)[ $duration](bg:bright-black)[](fg:bright-black)"
 
 [character]
 success_symbol = "[❯](purple)"
 error_symbol = "[❯](red)"
 vimcmd_symbol = "[❮](green)"
-
-[git_branch]
-format = "[$branch]($style)"
-style = "bright-black"
-
-[git_status]
-format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)"
-style = "cyan"
-conflicted = "​"
-untracked = "​"
-modified = "​"
-staged = "​"
-renamed = "​"
-deleted = "​"
-stashed = "≡"
-
-[git_state]
-format = '\([$state( $progress_current/$progress_total)]($style)\) '
-style = "bright-black"
-
-[cmd_duration]
-format = "[$duration]($style) "
-style = "yellow"
-
-[python]
-format = "[$virtualenv]($style) "
-style = "bright-black"
