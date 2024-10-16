@@ -11,7 +11,6 @@ set -eufo pipefail
 log_task "Installing packages"
 
 c sudo apt update -y
-c sudo apt upgrade -y
 
 {{ range .packages.apt }}
 sudo apt install -y {{ . | quote }}
