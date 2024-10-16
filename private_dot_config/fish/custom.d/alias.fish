@@ -36,6 +36,10 @@ if command -qs rsync
     alias rcp 'rsync --partial --info=progress2 -haz'
 end
 
+if command -qs 7zz
+    alias 7z 7zz
+end
+
 alias q exit
 alias e exit
 alias c clear

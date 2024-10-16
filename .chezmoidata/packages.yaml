@@ -24,6 +24,7 @@ packages:
     - "rclone"
     - "ripgrep"
     - "shellcheck"
+    - "sevenzip"
     - "starship"
     - "syncthing"
     - "tealdeer"
