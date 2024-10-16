@@ -8,7 +8,6 @@ packages:
     - "ripgrep"
     - "ugrep"
   brew:
-    - "atuin"
     - "bat"
     - "bat-extras"
     - "binutils"
@@ -49,7 +48,6 @@ packages:
   pip:
     - "uv"
   termux:
-    - "atuin"
     - "bat"
     - "eza"
     - "fd"

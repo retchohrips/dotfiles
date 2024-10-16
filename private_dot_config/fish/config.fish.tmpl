@@ -3,13 +3,6 @@ for file in $__fish_config_dir/custom.d/*.fish
     source $file
 end
 
-## Launch atuin
-if status is-interactive
-    if command -qs atuin
-        atuin init fish | source
-    end
-end
-
 function starship_transient_prompt_func
     starship module character
 end
