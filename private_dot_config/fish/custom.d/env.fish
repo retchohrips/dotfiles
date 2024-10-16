@@ -26,3 +26,5 @@ end
 set -Ux HOMEBREW_NO_AUTO_UPDATE 1
 
 set -gx RIPGREP_CONFIG_PATH "$HOME/.config/ripgrep/ripgreprc"
+
+set --universal zoxide_cmd cd
