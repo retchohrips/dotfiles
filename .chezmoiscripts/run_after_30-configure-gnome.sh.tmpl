@@ -24,6 +24,8 @@ gsettings_ensure org.gnome.desktop.interface clock-show-weekday "true"
 
 gsettings_ensure org.gnome.desktop.datetime automatic-timezone "true"
 
+dconf_ensure /org/gnome/desktop/input-sources/xkb-options "['caps:backspace']"
+
 dconf_ensure /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/name "'Terminal'"
 dconf_ensure /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/command "'flatpak run org.wezfurlong.wezterm'"
 dconf_ensure /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding "'<Control><Alt>t'"
