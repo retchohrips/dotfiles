@@ -15,12 +15,6 @@ Pictures
 .termux
 {{ end }}
 
-{{ if ne .de "kde" }}
-.config/kscreenlockerrc
-.config/kglobalshortcutsrc
-.config/kxkbrc
-{{ end }}
-
 {{ if not .blue }}
 .config/autostart
 {{ end }}
