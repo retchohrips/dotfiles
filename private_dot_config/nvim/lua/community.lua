@@ -7,18 +7,29 @@ return {
 	"AstroNvim/astrocommunity",
 	-- themes
 	{ import = "astrocommunity.colorscheme.gruvbox-nvim" },
-	-- keep buffers confined to tabs
-	{ import = "astrocommunity.bars-and-lines.scope-nvim" },
+	-- task runner
+	{ import = "astrocommunity.code-runner.overseer-nvim" },
 	-- superior to astronvim's built-in, highlights more types (rgb, hsl)
 	{ import = "astrocommunity.color.nvim-highlight-colors" },
+	-- dim inactive parts of the code
+	{ import = "astrocommunity.color.twilight-nvim" },
+	-- tiny plugin to enhance nvim's native comments
+	{ import = "astrocommunity.comment.ts-comments-nvim" },
+	-- supermaven
+	{ import = "astrocommunity.completion.supermaven-nvim" },
+	-- inspired by the error lens extension in vscode
+	{ import = "astrocommunity.diagnostics.error-lens-nvim" },
+	-- rainbow delimiters
 	{ import = "astrocommunity.pack.rainbow-delimiter-indent-blankline" },
 	-- open files that need sudo
 	{ import = "astrocommunity.editing-support.suda-vim" },
-	-- commands to change text case
-	{ import = "astrocommunity.editing-support.text-case-nvim" },
+	-- view and search your undo tree
+	{ import = "astrocommunity.editing-support.telescope-undo-nvim" },
+	-- replace nvim-autopairs with ultimate-autopair.nvim
+	{ import = "astrocommunity.editing-support.ultimate-autopair-nvim" },
 	-- documentation generator
 	{ import = "astrocommunity.editing-support.vim-doge" },
-	-- movement binds like vscode has
+	-- movement binds like vscode has, using Alt-j/k/h/l
 	{ import = "astrocommunity.editing-support.vim-move" },
 	-- edit your filesystem like a buffer
 	{ import = "astrocommunity.file-explorer.oil-nvim" },
@@ -27,12 +38,13 @@ return {
 	-- make typescript errors make sense
 	{ import = "astrocommunity.lsp.ts-error-translator-nvim" },
 	{ import = "astrocommunity.markdown-and-latex.glow-nvim" },
+	{ import = "astrocommunity.markdown-and-latex.markview-nvim" },
 	-- change delimiters
 	{ import = "astrocommunity.motion.nvim-surround" },
 	-- move by subwords
 	{ import = "astrocommunity.motion.nvim-spider" },
-	-- smooth scrolling for any motion
-	{ import = "astrocommunity.scrolling.cinnamon-nvim" },
+	-- smooth scrolling
+	{ import = "astrocommunity.scrolling.mini-animate" },
 	-- disables search highlighting when you are done
 	{ import = "astrocommunity.syntax.vim-cool" },
 	{ import = "astrocommunity.syntax.hlargs-nvim" },
@@ -40,15 +52,17 @@ return {
 	{ import = "astrocommunity.terminal-integration.flatten-nvim" },
 	-- dim unused functions, variables, params, more
 	{ import = "astrocommunity.utility.neodim" },
-	-- code/task runner
-	{ import = "astrocommunity.code-runner.overseer-nvim" },
+	-- replace UI for messages, cmdline, popupmenu
+	{ import = "astrocommunity.utility.noice-nvim" },
 	-- language packs
 	{ import = "astrocommunity.pack.astro" },
 	{ import = "astrocommunity.pack.bash" },
 	{ import = "astrocommunity.pack.chezmoi" },
 	{ import = "astrocommunity.pack.docker" },
 	{ import = "astrocommunity.pack.fish" },
+	{ import = "astrocommunity.pack.go" },
 	{ import = "astrocommunity.pack.html-css" },
+	{ import = "astrocommunity.pack.json" },
 	{ import = "astrocommunity.pack.just" },
 	{ import = "astrocommunity.pack.lua" },
 	{ import = "astrocommunity.pack.mdx" },
@@ -57,5 +71,4 @@ return {
 	{ import = "astrocommunity.pack.toml" },
 	{ import = "astrocommunity.pack.typescript" },
 	{ import = "astrocommunity.pack.yaml" },
-	-- import/override with your plugins folder
 }
