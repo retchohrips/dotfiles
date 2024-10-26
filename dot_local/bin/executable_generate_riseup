@@ -10,6 +10,7 @@ VERBOSE=
 NO_COMMENTS=
 SILENT=1
 TOP_GATEWAYS=5
+REMOTE_RANDOM=1
 # Function to display help message
 show_help() {
     cat <<EOF
@@ -20,6 +21,7 @@ Options:
   -v, --verbose       Enable verbose output
   -nc, --no-comments  Remove comments from the configuration
   -t, --top N         Select the top N gateways by ping time (default: $TOP_GATEWAYS)
+  -nr, --no-random    Disable remote-random
   -h, --help          Display this help message and exit
 
 If CONFIG_FILE is not specified, the default '$DEFAULT_OVPN_CONF' will be used.
@@ -41,6 +43,10 @@ while [[ $# -gt 0 ]]; do
     -t | --top)
         TOP_GATEWAYS=$2
         shift 2
+        ;;
+    -nr | --no-random)
+        REMOTE_RANDOM=
+        shift
         ;;
     -h | --help)
         show_help
@@ -71,7 +77,7 @@ dev tun
 proto tcp
 
 # remote entries will be added here
-remote-random
+${REMOTE_RANDOM:+remote-random}
 
 nobind
 
@@ -117,7 +123,7 @@ for gateway_b64 in $(echo "$gateways" | jq -r '.[] | @base64'); do
     # Ping the IP address and get the average time
     ping_time=$(ping -c 3 "$ip_address" 2>/dev/null | tail -1 | awk '{print $4}' | cut -d '/' -f 2)
 
-    if [ ! -z "$ping_time" ]; then
+    if [ -n "$ping_time" ]; then
         ping_results["$ip_address"]="$ping_time|$host|$location"
         echo -e "\e[32mPing time for $ip_address ($host, $location): ${ping_time}ms\e[0m"
     fi
@@ -126,7 +132,7 @@ done
 echo -e "\e[33mSorting gateways by ping time...\e[0m"
 top_gateways=$(for ip in "${!ping_results[@]}"; do
     echo "${ping_results[$ip]}|$ip"
-done | sort -n | head -n "$TOP_GATEWAYS" | awk -F'|' '{print $4 "|" $2 "|" $3 "|" $1}')
+done | sort -n | head -n "$((REMOTE_RANDOM ? TOP_GATEWAYS : 1))" | awk -F'|' '{print $4 "|" $2 "|" $3 "|" $1}')
 
 echo -e "\e[33mAdding top $TOP_GATEWAYS gateway(s) to OpenVPN config...\e[0m"
 remote_entries=""
