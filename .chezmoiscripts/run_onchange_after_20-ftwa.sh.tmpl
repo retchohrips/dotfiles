@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# {{- if and (eq .chezmoi.os "linux") (not .server) -}}
+
+# {{ template "scripts-library" }}
+
+# The following line is for ShellCheck to correctly identify the above include
+true || source ../.chezmoitemplates/scripts-library
+
+set -eufo pipefail
+
+log_task "Adding YouTube Music shortcut"
+sh -ec "$(curl -fsSL 'https://ftwa.mathix.dev/v/yt-music?os=linux&bw=brave&path=%2Fusr%2Fbin%2Fbrave-browser')"
+
+log_task "Adding CyberChef shortcut"
+sh -ec "$(curl -fsSL 'https://ftwa.mathix.dev/v/cyber-chef?os=linux&bw=brave&path=%2Fusr%2Fbin%2Fbrave-browser')"
+# {{- end -}}
