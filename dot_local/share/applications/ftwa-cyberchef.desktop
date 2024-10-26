@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=CyberChef
+Exec=/usr/bin/brave-browser --app='https://gchq.github.io/CyberChef'
+Icon=ftwa-cyberchef
+Terminal=false
+StartupNotify=true
+StartupWMClass=ftwa-cyberchef
+
+# This file was generated using FTWA (https://ftwa.mathix.dev)
