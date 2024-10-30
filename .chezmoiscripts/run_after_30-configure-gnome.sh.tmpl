@@ -27,8 +27,11 @@ gsettings_ensure org.gnome.desktop.datetime automatic-timezone "true"
 dconf_ensure /org/gnome/desktop/input-sources/xkb-options "['caps:backspace']"
 
 dconf_ensure /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/name "'Terminal'"
-dconf_ensure /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/command "'flatpak run org.wezfurlong.wezterm'"
+dconf_ensure /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/command "'ptyxis --new-window'"
 dconf_ensure /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding "'<Control><Alt>t'"
+
+dconf_ensure /org/gnome/Ptyxis/Shortcuts/move-next-tab "'<Control><Tab>'"
+dconf_ensure /org/gnome/Ptyxis/Shortcuts/move-previous-tab "'<Control><Shift><Tab>'"
 
 dconf_ensure /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/name "'Emoji'"
 dconf_ensure /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/command "'flatpak run com.tomjwatson.Emote'"
