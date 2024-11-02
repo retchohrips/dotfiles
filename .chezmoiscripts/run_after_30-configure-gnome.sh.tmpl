@@ -10,7 +10,9 @@ gsettings_ensure org.gnome.desktop.interface monospace-font-name "{{- .font.mono
 gsettings_ensure org.gnome.desktop.interface font-name "{{- .font.sans }} 11"
 gsettings_ensure org.gnome.desktop.interface document-font-name "{{- .font.sans }} 11"
 
-gsettings_ensure org.gnome.Ptyxis font-name "{{- .font.mono }} 12"
+gsettings_ensure org.gnome.Ptyxis use-system-font false
+gsettings_ensure org.gnome.Ptyxis font-name "{{- .font.terminal }} 12"
+gsettings_ensure org.gnome.Ptyxis cursor-shape "ibeam"
 
 gsettings_ensure org.gnome.desktop.interface icon-theme "morewaita"
 gsettings_ensure org.gnome.desktop.interface color-scheme "prefer-dark"
@@ -30,8 +32,9 @@ dconf_ensure /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/cu
 dconf_ensure /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/command "'ptyxis --new-window'"
 dconf_ensure /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding "'<Control><Alt>t'"
 
-dconf_ensure /org/gnome/Ptyxis/Shortcuts/move-next-tab "'<Control><Tab>'"
-dconf_ensure /org/gnome/Ptyxis/Shortcuts/move-previous-tab "'<Control><Shift><Tab>'"
+dconf_ensure /org/gnomePtyxis/cursor-shape "'ibeam'"
+dconf_ensure /org/gnome/Ptyxis/Shortcuts/move-next-tab "'<Control>Tab'"
+dconf_ensure /org/gnome/Ptyxis/Shortcuts/move-previous-tab "'<Control><Shift>Tab'"
 
 dconf_ensure /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/name "'Emoji'"
 dconf_ensure /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/command "'flatpak run com.tomjwatson.Emote'"
