@@ -1,0 +1,11 @@
+continue
+{{ if .server -}}
+dir=/data/storage/downloads
+{{ else -}}
+dir={{ .chezmoi.homeDir }}/Downloads
+{{ end -}}
+max-connection-per-server=4
+min-split-size=5M
+optimize-concurrent-downloads
+remote-time
+file-allocation=falloc
