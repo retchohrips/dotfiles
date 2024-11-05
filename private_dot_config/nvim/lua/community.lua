@@ -15,8 +15,7 @@ return {
 	{ import = "astrocommunity.color.twilight-nvim" },
 	-- tiny plugin to enhance nvim's native comments
 	{ import = "astrocommunity.comment.ts-comments-nvim" },
-	-- supermaven
-	{ import = "astrocommunity.completion.supermaven-nvim" },
+	{ import = "astrocommunity.completion.codeium-nvim" },
 	-- inspired by the error lens extension in vscode
 	{ import = "astrocommunity.diagnostics.error-lens-nvim" },
 	-- rainbow delimiters

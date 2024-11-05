@@ -21,6 +21,6 @@ Pictures
 {{ end }}
 
 {{ if .server }}
-.config/{gh,lazygit,wezterm,zed}
+.config/{gh,lazygit,zed}
 Pictures
 {{ end }}
