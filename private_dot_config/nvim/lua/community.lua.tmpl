@@ -15,7 +15,9 @@ return {
 	{ import = "astrocommunity.color.twilight-nvim" },
 	-- tiny plugin to enhance nvim's native comments
 	{ import = "astrocommunity.comment.ts-comments-nvim" },
+	{{ if not .server -}}
 	{ import = "astrocommunity.completion.codeium-nvim" },
+	{{- end }}
 	-- inspired by the error lens extension in vscode
 	{ import = "astrocommunity.diagnostics.error-lens-nvim" },
 	-- rainbow delimiters
@@ -26,8 +28,6 @@ return {
 	{ import = "astrocommunity.editing-support.telescope-undo-nvim" },
 	-- replace nvim-autopairs with ultimate-autopair.nvim
 	{ import = "astrocommunity.editing-support.ultimate-autopair-nvim" },
-	-- documentation generator
-	{ import = "astrocommunity.editing-support.vim-doge" },
 	-- movement binds like vscode has, using Alt-j/k/h/l
 	{ import = "astrocommunity.editing-support.vim-move" },
 	-- edit your filesystem like a buffer
@@ -46,29 +46,32 @@ return {
 	{ import = "astrocommunity.scrolling.mini-animate" },
 	-- disables search highlighting when you are done
 	{ import = "astrocommunity.syntax.vim-cool" },
+	-- syntax highlight function arguments
 	{ import = "astrocommunity.syntax.hlargs-nvim" },
 	-- open files and command output from terminals in your current instance
 	{ import = "astrocommunity.terminal-integration.flatten-nvim" },
-	-- dim unused functions, variables, params, more
+	-- dim unused functions, variables, params, & more like VSCode
 	{ import = "astrocommunity.utility.neodim" },
 	-- replace UI for messages, cmdline, popupmenu
 	{ import = "astrocommunity.utility.noice-nvim" },
 	-- language packs
+	{{ if not .server -}}
 	{ import = "astrocommunity.pack.astro" },
+	{ import = "astrocommunity.pack.go" },
+	{ import = "astrocommunity.pack.html-css" },
+	{ import = "astrocommunity.pack.just" },
+	{ import = "astrocommunity.pack.python-ruff" },
+	{ import = "astrocommunity.pack.svelte" },
+	{ import = "astrocommunity.pack.tailwindcss" },
+	{ import = "astrocommunity.pack.typescript" },
+	{{- end }}
 	{ import = "astrocommunity.pack.bash" },
 	{ import = "astrocommunity.pack.chezmoi" },
 	{ import = "astrocommunity.pack.docker" },
 	{ import = "astrocommunity.pack.fish" },
-	{ import = "astrocommunity.pack.go" },
-	{ import = "astrocommunity.pack.html-css" },
 	{ import = "astrocommunity.pack.json" },
-	{ import = "astrocommunity.pack.just" },
 	{ import = "astrocommunity.pack.lua" },
 	{ import = "astrocommunity.pack.mdx" },
-	{ import = "astrocommunity.pack.python-ruff" },
-	{ import = "astrocommunity.pack.svelte" },
-	{ import = "astrocommunity.pack.tailwindcss" },
 	{ import = "astrocommunity.pack.toml" },
-	{ import = "astrocommunity.pack.typescript" },
 	{ import = "astrocommunity.pack.yaml" },
 }
