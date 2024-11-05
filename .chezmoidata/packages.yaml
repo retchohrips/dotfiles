@@ -6,6 +6,7 @@ packages:
     - "fzf"
     - "neovim"
     - "ripgrep"
+    - "rust-sd"
     - "ugrep"
   brew:
     - "bat"
@@ -23,6 +24,7 @@ packages:
     - "pnpm"
     - "rclone"
     - "ripgrep"
+    - "sd"
     - "shellcheck"
     - "sevenzip"
     - "starship"
