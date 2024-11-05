@@ -6,7 +6,6 @@ LICENSE
 
 {{ if eq .chezmoi.os "android" }}
 .config/fish/custom_functions.d/note.fish
-.config/no-show-user-motd
 .local/bin
 Pictures
 {{ end }}
@@ -17,10 +16,15 @@ Pictures
 
 {{ if not .blue }}
 .config/autostart
+.config/no-show-user-motd
 .local/share/applications
 {{ end }}
 
 {{ if .server }}
-.config/{gh,lazygit,zed}
+.config/{gh,lazygit}
 Pictures
+{{ end }}
+
+{{ if not .server }}
+.hushlogin
 {{ end }}
