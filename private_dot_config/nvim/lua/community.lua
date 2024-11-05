@@ -66,6 +66,7 @@ return {
 	{ import = "astrocommunity.pack.lua" },
 	{ import = "astrocommunity.pack.mdx" },
 	{ import = "astrocommunity.pack.python-ruff" },
+	{ import = "astrocommunity.pack.svelte" },
 	{ import = "astrocommunity.pack.tailwindcss" },
 	{ import = "astrocommunity.pack.toml" },
 	{ import = "astrocommunity.pack.typescript" },
