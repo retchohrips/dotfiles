@@ -36,6 +36,12 @@ if command -qs rsync
     alias rcp 'rsync --partial --info=progress2 -haz'
 end
 
+if command -q 7zz
+    alias archive "7zz a -t7z -m0=lzma -mx=9 -mfb=64 -md=32m -ms=on $argv"
+else if command -q 7z
+    alias archive "7z a -t7z -m0=lzma -mx=9 -mfb=64 -md=32m -ms=on $argv"
+end
+
 if command -qs 7zz
     alias 7z 7zz
 end
