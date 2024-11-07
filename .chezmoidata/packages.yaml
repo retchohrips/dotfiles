@@ -6,7 +6,6 @@ packages:
     - "fzf"
     - "neovim"
     - "ripgrep"
-    - "rust-sd"
     - "ugrep"
   brew:
     - "bat"
@@ -37,6 +36,7 @@ packages:
     - "eza"
     - "fd-find"
     - "git-delta"
+    - "sd"
     - "starship"
     - "tealdeer"
   flatpak:
