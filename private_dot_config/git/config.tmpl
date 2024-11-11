@@ -1,7 +1,6 @@
 [include]
 path = alias
 path = color
-path = delta_themes
 
 [user]
 name = Jeremiah
@@ -24,9 +23,6 @@ defaultBranch = "main"
 
 [help]
 autocorrect = immediate
-
-[core]
-pager = delta --syntax-theme=ansi
 
 [fetch]
 prune = true
@@ -59,16 +55,13 @@ enabled = true
 [sequence]
 editor = interactive-rebase-tool
 
-[interactive]
-diffFilter = delta --color-only --syntax-theme=ansi
-
-[delta]
-features = unobtrusive-line-numbers decorations gruvmax-fang
-navigate = true
+[difftool "difftastic"]
+  cmd = difft "$MERGED" "$LOCAL" "abcdef1" "100644" "$REMOTE" "abcdef2" "100644"
 
 [diff]
-algorithm = histogram
-colorMoved = default
-colorMovedWS = allow-indentation-change
+  external = difft --display=inline
+  tool = difftastic
 
+[pager]
+  difftool = true
 {{- /* vim: set filetype=gitconfig: */ -}}
