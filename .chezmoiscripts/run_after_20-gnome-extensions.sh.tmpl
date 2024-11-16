@@ -106,4 +106,9 @@ gsettings_ensure org.gnome.shell.extensions.just-perfection search "false"
 gsettings_ensure org.gnome.shell.extensions.just-perfection workspaces-in-app-grid "false"
 gsettings_ensure org.gnome.shell.extensions.just-perfection clock-menu-position "0"          # Center
 gsettings_ensure org.gnome.shell.extensions.just-perfection notification-banner-position "1" # Center
+# Clipboard Indicator
+dconf_ensure /org/gnome/shell/extensions/clipboard-indicator/history-size "20"
+dconf_ensure /org/gnome/shell/extensions/clipboard-indicator/move-item-first "true"
+dconf_ensure /org/gnome/shell/extensions/clipboard-indicator/strip-text "true"
+dconf_ensure /org/gnome/shell/extensions/clipboard-indicator/toggle-menu "['<Shift><Super>v']"
 # {{- end -}}
