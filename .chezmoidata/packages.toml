@@ -2,7 +2,7 @@
 apt = [
   "bat",
   "build-essential", # for rust to build
-  "cmake", # for rust to build
+  "cmake",           # for rust to build
   "fzf",
   "neovim",
   "ripgrep",
@@ -32,23 +32,15 @@ brew = [
   "starship",
   "syncthing",
   "tealdeer",
+  "trash-cli",
   "ugrep",
   "yq",
   "zoxide",
 ]
 
-cargo = [
-  "difftastic",
-  "eza",
-  "fd-find",
-  "sd",
-  "starship",
-  "tealdeer",
-]
+cargo = ["difftastic", "eza", "fd-find", "sd", "starship", "tealdeer"]
 
-go = [
-  "gowall",
-]
+go = ["gowall"]
 
 flatpak = [
   "org.bleachbit.BleachBit",
@@ -61,9 +53,7 @@ flatpak = [
   "org.telegram.desktop",
 ]
 
-pip = [
-  "uv",
-]
+pip = ["uv"]
 
 termux = [
   "bat",
