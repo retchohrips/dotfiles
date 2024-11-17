@@ -1,3 +1,4 @@
 function backup --argument filename
-    cp $filename $filename.bak
+    set -l filename (echo "$filename" | sed 's/\/$//')
+    cp -r "$filename" "$filename.bak"
 end
