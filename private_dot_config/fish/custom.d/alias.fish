@@ -1,39 +1,40 @@
-if command -qs eza
-    alias ls 'eza --icons --sort=type'
-    alias l 'eza -l --icons --git --sort=type --header --no-time --total-size --smart-group --octal-permissions'
-    alias la 'eza -lag --icons --git --sort=type --header --no-time --total-size --smart-group --octal-permissions'
+if command -q eza
+    alias ls "eza --icons --sort=type"
+    alias l "eza -l --icons --git --sort=type --header --no-time --total-size --smart-group --octal-permissions"
+    alias la "eza -lag --icons --git --sort=type --header --no-time --total-size --smart-group --octal-permissions"
+    alias tree "eza --icons --tree"
 end
 
-if command -qs batcat
+if command -q batcat
     alias bat batcat
 end
 
 for cmd in bat batcat
-    if command -qs $cmd
+    if command -q $cmd
         alias cat "$cmd -pp"
         break
     end
 end
 
-if command -qs batman
+if command -q batman
     alias man batman
 end
 
-if command -qs prettybat
+if command -q prettybat
     alias pb prettybat
 end
 
-if command -qs ug
+if command -q ug
     alias grep ug
-    alias egrep 'ugrep -E'
-    alias fgrep 'ug -F'
-    alias xzgrep 'ug -z'
-    alias xzegrep 'ug -zE'
-    alias xzfgrep 'ug -zF'
+    alias egrep "ugrep -E"
+    alias fgrep "ug -F"
+    alias xzgrep "ug -z"
+    alias xzegrep "ug -zE"
+    alias xzfgrep "ug -zF"
 end
 
-if command -qs rsync
-    alias rcp 'rsync --partial --info=progress2 -haz'
+if command -q rsync
+    alias rcp "rsync --partial --info=progress2 -haz"
 end
 
 if command -q 7zz
@@ -42,8 +43,12 @@ else if command -q 7z
     alias archive "7z a -t7z -m0=lzma -mx=9 -mfb=64 -md=32m -ms=on $argv"
 end
 
-if command -qs 7zz
+if command -q 7zz
     alias 7z 7zz
+end
+
+if command -q podman && ! command -q docker
+    alias docker podman
 end
 
 alias q exit
