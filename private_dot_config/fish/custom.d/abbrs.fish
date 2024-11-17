@@ -1,16 +1,6 @@
 # git
 if command -qs git
     abbr g git
-    abbr ga 'git add .'
-    abbr gaa 'git add --all'
-    abbr gc 'git commit'
-    abbr gcm 'git commit -m'
-    abbr gs 'git status'
-    abbr gss 'git status --short'
-    abbr gp 'git push'
-    abbr gpl 'git pull'
-    abbr gl 'git log'
-    abbr gd 'git diff'
 end
 
 # nvim

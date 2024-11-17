@@ -21,6 +21,20 @@ helper = cache --timeout 21600 # six hours
 [init]
 defaultBranch = "main"
 
+[alias]
+  # Difftastic aliases, so `git dlog` is `git log` with difftastic and so on.
+  # `git log` with patches shown with difftastic.
+  dlog = -c diff.external=difft log -p --ext-diff
+  # Show the most recent commit with difftastic.
+  dshow = -c diff.external=difft show --ext-diff
+  # `git diff` with difftastic.
+  ddiff = -c diff.external=difft diff
+
+  # shorter versions of above
+  dl = -c diff.external=difft log -p --ext-diff
+  ds = -c diff.external=difft show --ext-diff
+  dft = -c diff.external=difft diff
+
 [help]
 autocorrect = immediate
 
