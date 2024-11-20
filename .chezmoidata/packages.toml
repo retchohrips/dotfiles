@@ -23,7 +23,6 @@ brew = [
   "lazygit",
   "neovim",
   "node",
-  "pnpm",
   "rclone",
   "ripgrep",
   "sd",
