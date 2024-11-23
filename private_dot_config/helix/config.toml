@@ -1,0 +1,18 @@
+theme = "gruvbox"
+
+[editor]
+bufferline = "multiple"
+line-number = "relative"
+color-modes = true
+
+[editor.statusline]
+left = ["mode", "diagnostics", "spinner", "version-control"]
+center = ["file-name", "file-modification-indicator"]
+right = ["selections", "file-type", "position-percentage", "total-line-numbers"]
+
+[editor.cursor-shape]
+insert = "bar"
+
+[editor.indent-guides]
+render = true
+skip-levels = 1
