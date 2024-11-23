@@ -4,7 +4,6 @@ apt = [
   "build-essential", # for rust to build
   "cmake",           # for rust to build
   "fzf",
-  "neovim",
   "ripgrep",
   "ugrep",
 ]
