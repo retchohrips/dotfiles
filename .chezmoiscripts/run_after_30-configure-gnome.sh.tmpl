@@ -43,5 +43,11 @@ dconf_ensure /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/cu
 # {{ else }}
 dconf_ensure /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/binding "'<Super>period'"
 # {{ end }}
+
+dconf_ensure /org/gnome/desktop/wm/keybindings/move-to-workspace-left "['<Shift><Super>bracketleft']"
+dconf_ensure /org/gnome/desktop/wm/keybindings/move-to-workspace-right "['<Shift><Super>bracketright']"
+dconf_ensure /org/gnome/desktop/wm/keybindings/switch-to-workspace-left "['<Super>bracketleft']"
+dconf_ensure /org/gnome/desktop/wm/keybindings/switch-to-workspace-right "['<Super>bracketright']"
+
 dconf_ensure /org/gnome/shell/favorite-apps "['brave-browser.desktop', 'org.gnome.Nautilus.desktop', 'md.obsidian.Obsidian.desktop']"
 # {{- end -}}
