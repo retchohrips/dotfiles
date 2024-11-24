@@ -26,6 +26,7 @@ brew = [
   "ripgrep",
   "sd",
   "shellcheck",
+  "shfmt",
   "sevenzip",
   "starship",
   "syncthing",
@@ -38,8 +39,6 @@ brew = [
 
 cargo = ["difftastic", "eza", "fd-find", "sd", "starship", "tealdeer"]
 
-go = ["gowall"]
-
 flatpak = [
   "org.bleachbit.BleachBit",
   "org.blender.Blender",
@@ -50,6 +49,10 @@ flatpak = [
   "md.obsidian.Obsidian",
   "org.telegram.desktop",
 ]
+
+go = ["gowall"]
+
+node = ["bash-language-server", "dockerfile-language-server-nodejs", "markdown-lint", "marksman", "pyright"]
 
 pip = ["uv"]
 

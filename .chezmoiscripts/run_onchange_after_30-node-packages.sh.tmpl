@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
-# {{- if and (eq .chezmoi.os "linux") (not .server) -}}
-
 # {{ template "scripts-library" }}
 
 # The following line is for ShellCheck to correctly identify the above include
@@ -8,5 +6,11 @@ true || source ../.chezmoitemplates/scripts-library
 
 set -eufo pipefail
 
-sh -ec "$(curl -fsSl 'https://raw.githubusercontent.com/dpejoh/Adwaita-colors/main/MoreWaita.sh')"> /dev/null 2>&1
-# {{- end -}}
+if command -v pnpm &>/dev/null; then
+  log_task "Installing node packages"
+
+{{ range .packages.node }}
+  pnpm add -g {{ . | quote }}
+{{ end -}}
+
+fi
