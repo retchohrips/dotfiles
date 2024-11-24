@@ -1,4 +1,4 @@
-function webback --argument url
+function webback --description "Back up a website using wget" --argument url
     wget \
         --recursive \
         --no-clobber \

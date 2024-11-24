@@ -51,6 +51,17 @@ if command -q podman && ! command -q docker
     alias docker podman
 end
 
+if command -q trash
+    alias rl trash-list
+    # safe rm by default
+    alias rm trash-put
+    alias rr trash-restore
+    # real rm still easily available
+    alias remove /usr/bin/rm
+end
+
 alias q exit
 alias e exit
 alias c clear
+
+alias zc "cd && clear"

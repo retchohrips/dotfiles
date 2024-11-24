@@ -1,4 +1,4 @@
-function extract
+function extract --description "extract file using the right command for the type"
     if count $argv >/dev/null
         if test -f $argv
             switch $argv
