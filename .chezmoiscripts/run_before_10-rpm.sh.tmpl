@@ -47,16 +47,4 @@ if ! command -v brave-browser &>/dev/null; then
 
   c sudo rpm-ostree install brave-browser
 fi
-
-if command -v yelp &>/dev/null; then
-  log_task "Removing yelp"
-
-  c sudo rpm-ostree override remove yelp
-fi
-
-if command -v webapp-manager &>/dev/null; then
-  log_task "Removing webapp-manager"
-
-  c sudo rpm-ostree override remove webapp-manager
-fi
 # {{- end -}}
