@@ -26,6 +26,14 @@ gsettings_ensure org.gnome.desktop.interface clock-show-weekday "true"
 
 gsettings_ensure org.gnome.desktop.datetime automatic-timezone "true"
 
+gsettings_ensure org.gnome.desktop.privacy remember-recent-files "false"
+gsettings_ensure org.gnome.desktop.privacy remove-old-temp-files "true"
+gsettings_ensure org.gnome.desktop.privacy remove-old-trash-files "true"
+
+dconf_ensure /org/gnome/TextEditor/restore-session "'false'"
+
+dconf_ensure /org/gtk/settings/file-chooser/clock-format "'12h'"
+
 dconf_ensure /org/gnome/desktop/input-sources/xkb-options "['caps:backspace']"
 
 dconf_ensure /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/name "'Terminal'"
@@ -49,5 +57,5 @@ dconf_ensure /org/gnome/desktop/wm/keybindings/move-to-workspace-right "['<Shift
 dconf_ensure /org/gnome/desktop/wm/keybindings/switch-to-workspace-left "['<Super>bracketleft']"
 dconf_ensure /org/gnome/desktop/wm/keybindings/switch-to-workspace-right "['<Super>bracketright']"
 
-dconf_ensure /org/gnome/shell/favorite-apps "['brave-browser.desktop', 'org.gnome.Nautilus.desktop', 'md.obsidian.Obsidian.desktop']"
+dconf_ensure /org/gnome/shell/favorite-apps "['brave-browser.desktop', 'org.gnome.Nautilus.desktop', 'md.obsidian.Obsidian.desktop', 'ftwa-youtube-music.desktop']"
 # {{- end -}}
