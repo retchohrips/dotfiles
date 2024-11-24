@@ -24,6 +24,4 @@ end
 
 set -gx RIPGREP_CONFIG_PATH "$HOME/.config/ripgrep/ripgreprc"
 
-set --universal zoxide_cmd cd
-
 set -Ux NODE_OPTIONS "--disable-warning=ExperimentalWarning"
