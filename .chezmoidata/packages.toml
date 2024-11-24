@@ -50,7 +50,7 @@ flatpak = [
   "org.telegram.desktop",
 ]
 
-go = ["gowall"]
+go = ["github.com/Achno/gowall@latest"]
 
 node = ["bash-language-server", "dockerfile-language-server-nodejs", "markdown-lint", "marksman", "pyright"]
 
