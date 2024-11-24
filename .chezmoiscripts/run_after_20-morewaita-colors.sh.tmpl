@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# {{- if and (eq .chezmoi.os "linux") (not .server) -}}
+
+# {{ template "scripts-library" }}
+
+# The following line is for ShellCheck to correctly identify the above include
+true || source ../.chezmoitemplates/scripts-library
+
+set -eufo pipefail
+
+log_task "Adding colors to MoreWaita"
+sh -ec "$(curl -fsSl 'https://raw.githubusercontent.com/dpejoh/Adwaita-colors/main/MoreWaita.sh')"
+# {{- end -}}
