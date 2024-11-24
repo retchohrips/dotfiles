@@ -22,9 +22,6 @@ for cmd in bat batcat
     end
 end
 
-# Don't update brew, bluefin/bazzite already do
-set -Ux HOMEBREW_NO_AUTO_UPDATE 1
-
 set -gx RIPGREP_CONFIG_PATH "$HOME/.config/ripgrep/ripgreprc"
 
 set --universal zoxide_cmd cd
