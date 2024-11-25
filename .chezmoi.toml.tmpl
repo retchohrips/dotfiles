@@ -23,8 +23,11 @@ color = "on"
 pager = "less"
 
 [diff]
-exclude = ["scripts"]
 command = "difft"
+args = ["--color", "always", "--missing-as-empty", "--skip-unchanged"]
+pager = "less -RF"
+exclude = ["scripts"]
+reverse = false
 
 [edit]
 command = "nvim"
