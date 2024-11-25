@@ -18,6 +18,7 @@ Pictures
 .config/autostart
 .config/no-show-user-motd
 .local/share/applications
+.local/share/ice
 {{ end }}
 
 {{ if .server }}
