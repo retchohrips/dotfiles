@@ -6,6 +6,7 @@ apt = [
   "fzf",
   "ripgrep",
   "ugrep",
+  "zoxide"
 ]
 
 brew = [
