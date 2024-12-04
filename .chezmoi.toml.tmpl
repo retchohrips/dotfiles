@@ -30,7 +30,11 @@ exclude = ["scripts"]
 reverse = false
 
 [edit]
-command = "nvim"
+{{- if lookPath "hx" }}
+command = "hx"
+{{- else }}
+command = "vi"
+{{- end }}
 
 [status]
 exclude = ["scripts"]
