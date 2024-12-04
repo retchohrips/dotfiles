@@ -66,6 +66,6 @@ end
 
 alias q exit
 alias e exit
-alias c clear
+alias c "tput reset"
 
-alias zc "cd && clear"
+alias zc "cd && tput reset"
