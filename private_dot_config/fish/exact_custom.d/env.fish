@@ -1,9 +1,8 @@
 # Disable fish greeting
 set -g fish_greeting
 
-if command -qs nvim
-    set -gx EDITOR nvim
-    set -gx VISUAL nvim
+if command -qs hx
+    set -gx EDITOR hx
 end
 
 # Load custom functions

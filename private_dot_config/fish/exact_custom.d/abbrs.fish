@@ -3,10 +3,9 @@ if command -qs git
     abbr g git
 end
 
-# nvim
-if command -qs nvim
-    abbr vi nvim
-    abbr vim nvim
+# hx
+if command -qs hx
+    abbr v hx
 end
 
 # chezmoi
