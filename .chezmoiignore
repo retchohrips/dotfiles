@@ -2,7 +2,6 @@ README.md
 LICENSE
 .config/Code
 .config/fish/{conf.d,completions,fish_variables,functions}
-**/*.src.ini
 
 {{ if eq .chezmoi.os "android" }}
 .config/fish/custom_functions.d/note.fish
@@ -28,4 +27,8 @@ Pictures
 
 {{ if not .server }}
 .hushlogin
+{{ end }}
+
+{{ if ne .device_type "laptop" }}
+Pictures/Wallpapers/**/home-*
 {{ end }}
