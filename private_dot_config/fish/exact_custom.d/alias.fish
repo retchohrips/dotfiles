@@ -60,6 +60,10 @@ if command -q trash
     alias remove /usr/bin/rm
 end
 
+if command -q rg
+    alias rgf "rg --files | rg"
+end
+
 alias q exit
 alias e exit
 alias c clear
