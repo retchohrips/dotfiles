@@ -7,9 +7,12 @@ scrolloff = 10
 cursorline = true
 color-modes = true
 
+[editor.file-picker]
+hidden = false
+
 [editor.lsp]
 display-messages = true
-display-inline-hints = true
+display-inlay-hints = true
 
 [editor.statusline]
 left = ["mode", "diagnostics", "spinner", "version-control"]

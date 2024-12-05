@@ -1,72 +1,78 @@
 [packages]
 apt = [
-  "bat",
-  "build-essential", # for rust to build
-  "cmake",           # for rust to build
-  "fzf",
-  "ripgrep",
-  "ugrep",
-  "zoxide"
+    "bat",
+    "build-essential", # for rust to build
+    "cmake",           # for rust to build
+    "fzf",
+    "ripgrep",
+    "ugrep",
+    "zoxide",
 ]
 
 brew = [
-  "bat",
-  "bat-extras",
-  "binutils",
-  "eza",
-  "difftastic",
-  "fd",
-  "fzf",
-  "gh",
-  "go",
-  "git-interactive-rebase-tool",
-  "helix",
-  "lazygit",
-  "neovim",
-  "rclone",
-  "ripgrep",
-  "sd",
-  "shellcheck",
-  "shfmt",
-  "sevenzip",
-  "starship",
-  "syncthing",
-  "tealdeer",
-  "trash-cli",
-  "ugrep",
-  "yq",
+    "bat",
+    "bat-extras",
+    "binutils",
+    "eza",
+    "difftastic",
+    "fd",
+    "fzf",
+    "gh",
+    "go",
+    "git-interactive-rebase-tool",
+    "helix",
+    "lazygit",
+    "neovim",
+    "rclone",
+    "ripgrep",
+    "sd",
+    "shellcheck",
+    "shfmt",
+    "sevenzip",
+    "starship",
+    "syncthing",
+    "tealdeer",
+    "trash-cli",
+    "ugrep",
+    "yq",
 ]
 
 cargo = ["difftastic", "eza", "fd-find", "sd", "starship", "tealdeer"]
 
 flatpak = [
-  "org.bleachbit.BleachBit",
-  "org.blender.Blender",
-  "com.usebottles.bottles",
-  "page.kramo.Cartridges",
-  "com.tomjwatson.Emote",
-  "org.localsend.localsend_app",
-  "md.obsidian.Obsidian",
-  "org.telegram.desktop",
+    "org.bleachbit.BleachBit",
+    "org.blender.Blender",
+    "com.usebottles.bottles",
+    "page.kramo.Cartridges",
+    "com.tomjwatson.Emote",
+    "org.localsend.localsend_app",
+    "md.obsidian.Obsidian",
+    "org.telegram.desktop",
 ]
 
 go = ["github.com/Achno/gowall@latest"]
 
-node = ["bash-language-server", "dockerfile-language-server-nodejs", "markdown-lint", "marksman", "pyright"]
+node = [
+    "bash-language-server",
+    "dockerfile-language-server-nodejs",
+    "markdown-lint",
+    "marksman",
+    "pyright",
+]
 
-pip = ["uv"]
+pipx = ["basedpyright", "uv"]
 
 termux = [
-  "bat",
-  "eza",
-  "fd",
-  "fzf",
-  "gh",
-  "lazygit",
-  "neovim",
-  "ripgrep",
-  "tealdeer",
-  "ugrep",
-  "yq",
-  "zoxide",
+    "bat",
+    "eza",
+    "fd",
+    "fzf",
+    "gh",
+    "lazygit",
+    "neovim",
+    "ripgrep",
+    "tealdeer",
+    "ugrep",
+    "yq",
+    "zoxide",
 ]

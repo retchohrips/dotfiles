@@ -8,11 +8,11 @@ true || source ../.chezmoitemplates/scripts-library
 
 set -eufo pipefail
 
-log_task "Installing pip packages"
+log_task "Installing pipx packages"
 
-# {{ range .packages.pip -}}
+# {{ range .packages.pipx -}}
 # shellcheck disable=SC1083
-c pip install --user -q {{ . | quote }}
+c pipx install -q {{ . | quote }}
 # {{ end -}}
 
 # {{- end -}}
