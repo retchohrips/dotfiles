@@ -3,8 +3,14 @@ for file in $__fish_config_dir/custom.d/*.fish
     source $file
 end
 
-function starship_transient_prompt_func
-    starship module character
+if command -q starship
+    function starship_transient_prompt_func
+        starship module character
+    end
+    starship init fish | source
+    enable_transience
 end
-starship init fish | source
-enable_transience
+
+if command -q zoxide
+    zoxide init fish --cmd cd | source
+end
