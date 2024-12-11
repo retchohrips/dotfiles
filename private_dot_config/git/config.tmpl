@@ -5,6 +5,7 @@ path = color
 [user]
 name = Jeremiah
 email = 44993244+jechton@users.noreply.github.com
+signingkey = ~/.ssh/id_ed25519.pub
 
 {{ if not .server -}}
 [url "ssh://git@github.com"]
@@ -20,6 +21,9 @@ helper = cache --timeout 21600 # six hours
 
 [init]
 defaultBranch = "main"
+
+[gpg]
+format = ssh
 
 [alias]
   # Difftastic aliases, so `git dlog` is `git log` with difftastic and so on.
@@ -46,6 +50,7 @@ rebase = true
 
 [commit]
 verbose = true
+gpgsign = true
 
 [absorb]
 maxStack=100
