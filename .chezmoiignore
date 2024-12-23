@@ -21,7 +21,7 @@ Pictures
 {{ end }}
 
 {{ if .server }}
-.config/{gh,helix,lazygit,nvim}
+.config/{gh,helix,lazygit,nvim,zed}
 Pictures
 {{ end }}
 
