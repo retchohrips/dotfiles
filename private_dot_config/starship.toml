@@ -1,55 +1,67 @@
-"$schema" = 'https://starship.rs/config-schema.json'
+"$schema" = "https://starship.rs/config-schema.json"
 
 format = """
-[╭](fg:bright-black)$username$hostname\
-$container$directory\
-$git_branch$git_status\
-$golang$nodejs$python\
+$hostname\
+$directory\
+$git_status\
+$git_branch\
+$golang\
+$nodejs\
+$python\
 $cmd_duration\
 $line_break\
-[╰](fg:bright-black)$character"""
-
-[username]
-format = "[─](fg:bright-black)[](fg:white)[ ](fg:black bg:white)[](fg:white bg:bright-black)[ $user](bg:bright-black)[](fg:bright-black)"
+$character"""
 
 [hostname]
-format = "[─](fg:bright-black)[](fg:green)[ ](fg:black bg:green)[](fg:green bg:bright-black)[ $hostname](bg:bright-black)[](fg:bright-black)"
+format = "[](fg:green)[](fg:black bg:prev_fg)[](fg:prev_bg bg:bright-black)[ $hostname](bg:prev_bg)[](fg:prev_bg)[─](fg:bright-black)"
 
 [container]
 symbol = " "
-format = "[─](fg:bright-black)[](fg:red)[$symbol](fg:black bg:red)[](fg:red bg:bright-black)[ $name](bg:bright-black)[](fg:bright-black)"
+format = "[](fg:green)[$symbol](fg:black bg:prev_fg)[](fg:prev_bg bg:bright-black)[ $name](bg:prev_bg)[](fg:prev_bg)[─](fg:bright-black)"
 
 [directory]
-format = "[─](fg:bright-black)[](fg:blue)[ ](fg:black bg:blue)[](fg:blue bg:bright-black)[ $path](bg:bright-black)[](fg:bright-black)"
+format = "[](fg:blue)[ ](fg:black bg:prev_fg)[](fg:prev_bg bg:bright-black)[ $read_only$path](bg:prev_bg)[](fg:prev_bg)"
 repo_root_style = "fg:bright-black" # Not actually used, but needed to get repo_root_format
-repo_root_format = "[─](fg:bright-black)[](fg:blue)[ ](fg:black bg:blue)[](fg:blue bg:bright-black)[ $repo_root$path](bg:bright-black)[](fg:bright-black)"
-truncation_length = 5 # Number of folders that the directory should truncate to
+repo_root_format = "[](fg:blue)[ ](fg:black bg:prev_fg)[](fg:prev_bg bg:bright-black)[ $repo_root$path](bg:prev_bg)"
+truncation_length = 3 # Number of folders that the directory should truncate to
 truncate_to_repo = true
 truncation_symbol = "…/"
-
-[git_branch]
-symbol =" "
-format = "[─](fg:bright-black)[](fg:cyan)[$symbol](fg:black bg:cyan)[](fg:cyan bg:bright-black)[ $branch(:$remote-branch)](bg:bright-black)[](fg:bright-black)"
-ignore_branches = ["main", "master"]
+read_only = " "
 
 [git_status]
-format = "([─](fg:bright-black)[](fg:red)[$all_status$ahead_behind](fg:black bg:red)[](fg:red))"
+format = "[$all_status](fg:red bg:bright-black)[](fg:prev_bg)"
+conflicted = " ="
+up_to_date = ""
+untracked = " ?${count}"
+stashed = " $"
+modified = " !${count}"
+staged = " +"
+renamed = " »"
+deleted = " ✘"
+ahead = " ⇡${count}"
+diverged = " ⇕⇡${ahead_count}⇣${behind_count}"
+behind = " ⇣${count}"
+
+[git_branch]
+symbol = " "
+format = "[─](fg:bright-black)[](fg:cyan)[$symbol](fg:black bg:prev_fg)[](fg:prev_bg bg:bright-black)[ $branch(:$remote-branch)](bg:prev_bg)[](fg:prev_bg)"
+ignore_branches = ["main", "master"]
 
 [golang]
-format = "[─](fg:bright-black)[](fg:cyan)[$symbol](fg:black bg:cyan)[](fg:cyan bg:bright-black)[ $version](bg:bright-black)[](fg:bright-black)"
+format = "[─](fg:bright-black)[](fg:cyan)[$symbol](fg:black bg:prev_fg)[](fg:prev_bg bg:bright-black)[ $version](bg:prev_bg)[](fg:prev_bg)"
 symbol = "󰟓 "
 
 [nodejs]
-format = "[─](fg:bright-black)[](fg:green)[$symbol](fg:black bg:green)[](fg:green bg:bright-black)[ $version](bg:bright-black)[](fg:bright-black)"
+format = "[─](fg:bright-black)[](fg:green)[$symbol](fg:black bg:prev_fg)[](fg:prev_bg bg:bright-black)[ $version](bg:prev_bg)[](fg:prev_bg)"
 
 [python]
-format = "[─](fg:bright-black)[](fg:yellow)[$symbol](fg:black bg:yellow)[](fg:yellow bg:bright-black)[ $version( via $virtualenv)](bg:bright-black)[](fg:bright-black)"
+format = "[─](fg:bright-black)[](fg:yellow)[$symbol](fg:black bg:prev_fg)[](fg:prev_bg bg:bright-black)[ $version( via $virtualenv)](bg:prev_bg)[](fg:prev_bg)"
 symbol = " "
 
 [cmd_duration]
-format = "[─](fg:bright-black)[](fg:yellow)[󱎫 ](fg:black bg:yellow)[](fg:yellow bg:bright-black)[ $duration](bg:bright-black)[](fg:bright-black)"
+format = "[─](fg:bright-black)[](fg:yellow)[󱎫 ](fg:black bg:prev_fg)[](fg:prev_bg bg:bright-black)[ $duration](bg:prev_bg)[](fg:prev_bg)"
 
 [character]
-success_symbol = "[❯](purple)"
-error_symbol = "[❯](red)"
-vimcmd_symbol = "[❮](green)"
+success_symbol = "[λ](purple)"
+error_symbol = "[λ](red)"
+vimcmd_symbol = "[λ](green)"
