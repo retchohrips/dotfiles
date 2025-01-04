@@ -6,7 +6,6 @@ LICENSE
 {{ if eq .chezmoi.os "android" }}
 .config/fish/custom_functions.d/note.fish
 .local/bin
-Pictures
 {{ end }}
 
 {{ if ne .chezmoi.os "android" }}
@@ -16,13 +15,11 @@ Pictures
 {{ if not .blue }}
 .config/autostart
 .config/no-show-user-motd
-.local/share/applications
-.local/share/ice
+.local/share/{applications,ice,wallpapers}
 {{ end }}
 
 {{ if .server }}
 .config/{gh,ghostty,helix,lazygit,nvim,zed}
-Pictures
 {{ end }}
 
 {{ if not .server }}
@@ -30,5 +27,5 @@ Pictures
 {{ end }}
 
 {{ if ne .device_type "laptop" }}
-Pictures/Wallpapers/**/home-*
+.local/share/wallpapers/**/home-*
 {{ end }}
