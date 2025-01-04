@@ -26,6 +26,6 @@ LICENSE
 .hushlogin
 {{ end }}
 
-{{ if ne .device_type "laptop" }}
+{{ if eq .device_type "laptop" }}
 .local/share/wallpapers/**/home-*
 {{ end }}
