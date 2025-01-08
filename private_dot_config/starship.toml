@@ -2,6 +2,7 @@
 
 format = """
 $hostname\
+$container\
 $directory\
 $git_status\
 $git_branch\
