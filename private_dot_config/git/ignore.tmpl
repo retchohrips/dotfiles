@@ -1,0 +1,6 @@
+{{ if eq .chezmoi.os "linux" -}}
+{{ joinPath .chezmoi.sourceDir "gitignore" "Global" "Linux.gitignore" | include }}
+{{ end -}}
+
+{{ joinPath .chezmoi.sourceDir "gitignore" "Global" "Vim.gitignore" | include }}
+{{ joinPath .chezmoi.sourceDir "gitignore" "Global" "VisualStudioCode.gitignore" | include }}
