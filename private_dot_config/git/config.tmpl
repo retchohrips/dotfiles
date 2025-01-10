@@ -4,18 +4,29 @@ path = color
 
 [user]
 name = Jeremiah
-email = 44993244+jechton@users.noreply.github.com
+email = jechton@noreply.localhost
 signingkey = ~/.ssh/id_ed25519.pub
+
+[includeIf "gitdir:~/.local/share/chezmoi"]
+path = config-github
+
+[includeIf "gitdir:~/Projects/GitHub/"]
+path = config-github
 
 {{ if not .server -}}
 [url "ssh://git@github.com"]
 insteadOf = https://github.com
-{{ end }}
+
+[url "ssh://git@git.gay"]
+insteadOf = https://git.gay
+{{- end }}
+
 {{$ghPath := lookPath "gh" -}}
 {{- if $ghPath -}}
 [credential "ssh://github.com"]
 helper = !{{ $ghPath }} auth git-credential
 {{- end }}
+
 [credential]
 helper = cache --timeout 21600 # six hours
 
@@ -75,12 +86,11 @@ enabled = true
 editor = interactive-rebase-tool
 
 [difftool "difftastic"]
-  cmd = difft "$MERGED" "$LOCAL" "abcdef1" "100644" "$REMOTE" "abcdef2" "100644"
+cmd = difft "$MERGED" "$LOCAL" "abcdef1" "100644" "$REMOTE" "abcdef2" "100644"
 
 [diff]
-  external = difft --display=inline
-  tool = difftastic
+external = difft --display=inline
+tool = difftastic
 
 [pager]
-  difftool = true
-{{- /* vim: set filetype=gitconfig: */ -}}
+difftool = true
