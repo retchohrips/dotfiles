@@ -1,9 +1,7 @@
-if command -q eza
-    alias ls "eza --icons --sort=type"
-    alias l "eza -l --icons --git --sort=type --header --no-time --total-size --smart-group --octal-permissions"
-    alias la "eza -lag --icons --git --sort=type --header --no-time --total-size --smart-group --octal-permissions"
-    alias tree "eza --icons --tree"
-end
+alias ls "eza --icons --sort=type"
+alias l "eza -l --icons --git --sort=type --header --no-time --total-size --smart-group --octal-permissions"
+alias la "eza -lag --icons --git --sort=type --header --no-time --total-size --smart-group --octal-permissions"
+alias tree "eza --icons --tree"
 
 if command -q batcat
     alias bat batcat
@@ -69,3 +67,4 @@ alias e exit
 alias c "tput reset"
 
 alias zc "cd && tput reset"
+alias cdc "cd && tput reset"
