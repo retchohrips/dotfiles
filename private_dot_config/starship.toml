@@ -30,7 +30,7 @@ truncation_symbol = "…/"
 read_only = " "
 
 [git_status]
-format = "[$all_status](fg:red bg:bright-black)[](fg:prev_bg)"
+format = "[$all_status$ahead_behind](fg:red bg:bright-black)[](fg:prev_bg)"
 conflicted = " ="
 up_to_date = ""
 untracked = " ?${count}"
